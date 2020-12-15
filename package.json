@@ -1,0 +1,17 @@
+{
+  "name": "@de44/aiven-node",
+  "version": "0.1.0",
+  "description": "Aiven utilities for NodeJS",
+  "main": "src/main.js",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "publish": "npm publish --access public"
+  },
+  "author": "david@aiven.io",
+  "license": "MIT"
+}
