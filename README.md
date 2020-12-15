@@ -7,13 +7,12 @@ via NodeJS and the API.
 
 ```bash
 npm install -S @de44/aiven-node
+npm i @de44/aiven-node
 ```
 
 ```javascript
 const AivenApi = require('@de44/aiven-node');
 
-const token = 'my-aiven-api-token';
-const projectId = 'my-project-id';
 const avn = new AivenApi({
   token: 'my-aiven-api-token',
   projectId: 'my-project-id',
