@@ -1,6 +1,6 @@
 {
   "name": "@de44/aiven-node",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Aiven utilities for NodeJS",
   "main": "src/main.js",
   "dependencies": {
