@@ -25,6 +25,7 @@ const avn = new AivenApi({
 | ----------------------- | ---------------- | ------------------------------------------------- |
 | `me()`                  | `async function` | Returns the currently logged in user              |
 | `setProject(projectId)` | `function`       | Sets the active project.                          |
+| `clouds`                | `async function` | Fetches all public clouds and regions.            |
 | `projects`              | `Object`         | Project utilities                                 |
 | `projects.list()`       | `async function` | Returns all the project for the logged in user.   |
 | `projects.details(id)`  | `async function` | Returns the details of the specified project.     |

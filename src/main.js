@@ -107,6 +107,25 @@ class AivenApi {
       this.services = asServices(projectId, call);
     }
   }
+  clouds() {
+    return this.call('https://api.aiven.io/v1/clouds', 'clouds');
+  }
+  async pricing() {
+    const services = await this.call(
+      'https://api.aiven.io/v1/service_types',
+      'service_types',
+    );
+    Object.values(services).forEach((service) => {
+      delete service.user_config_schema;
+      service.plans = service.service_plans.map((plan) => {
+        delete plan.backup_config;
+        delete plan.service_type;
+        return plan;
+      });
+      delete service.service_plans;
+    });
+    return services;
+  }
   async getKafkaCreds(serviceName) {
     const ca = check(
       await this.projects.ca(this.projectId),
