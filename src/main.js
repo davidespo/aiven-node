@@ -157,6 +157,35 @@ class AivenApi {
       schemaRegistryUri: connection_info.schema_registry_uri,
     };
   }
+  async getElasticsearchCreds(serviceName) {
+    const service = check(
+      await this.services.details(serviceName),
+      `Service with name "${serviceName}" not found`,
+    );
+    const { connection_info, service_uri: esUri, service_type } = service;
+    const {
+      elasticsearch_password: password,
+      elasticsearch_username: username,
+      kibana_uri: kibanaUri,
+    } = connection_info;
+    check(
+      service_type === 'elasticsearch',
+      `Service with name "${serviceName}" not type elasticsearch. Instead was of type="${service_type}"`,
+    );
+    return {
+      baseReq: {
+        url: esUri,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      },
+      username,
+      password,
+      esUri,
+      kibanaUri,
+    };
+  }
   me() {
     return this.call('https://api.aiven.io/v1/me', 'user');
   }

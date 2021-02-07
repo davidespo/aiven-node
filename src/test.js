@@ -1,4 +1,5 @@
 require('dotenv').config();
+const axios = require('axios');
 const AivenApi = require('./main.js');
 
 const print = (promise) => promise.then((content) => console.log(content));
@@ -14,7 +15,13 @@ const avn = new AivenApi({ projectId, token });
 // print(avn.services.powerOn(serviceName));
 // print(avn.services.powerOff(serviceName));
 // print(avn.getKafkaCreds(serviceName));
+print(
+  avn
+    .getElasticsearchCreds(serviceName)
+    .then((creds) => axios(creds.esUri))
+    .then((res) => res.data),
+);
 
 // print(avn.clouds());
 // print(avn.pricing());
-avn.pricing().then((pricing) => console.log(pricing.cassandra.plans[0]));
+// avn.pricing().then((pricing) => console.log(pricing.cassandra.plans[0]));

@@ -1,10 +1,14 @@
 {
   "name": "@de44/aiven-node",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Aiven utilities for NodeJS",
-  "main": "src/main.js",
+  "homepage": "https://github.com/davidespo/aiven-node",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidespo/aiven-node"
+  },
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "lodash": "^4.17.20"
   },
@@ -12,6 +16,13 @@
   "scripts": {
     "publish": "npm publish --access public"
   },
-  "author": "david@aiven.io",
-  "license": "MIT"
+  "author": {
+    "name": "David Esposito",
+    "email": "david@aiven.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidespo/aiven-node/issues",
+    "email": "david@aiven.io"
+  }
 }
