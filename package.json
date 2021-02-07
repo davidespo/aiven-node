@@ -1,12 +1,13 @@
 {
   "name": "@de44/aiven-node",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Aiven utilities for NodeJS",
   "homepage": "https://github.com/davidespo/aiven-node",
   "repository": {
     "type": "git",
     "url": "https://github.com/davidespo/aiven-node"
   },
+  "main": "src/main.js",
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
